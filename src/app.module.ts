@@ -2,8 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PawnHubModule } from "PawnHub/PawnhubModule"
-import { PawnHubModule } from './pawn-hub/pawn-hub.module';
+import { pawnhubModule } from "./pawn-hub/pawn-hubModule"
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -13,7 +12,7 @@ import { PawnHubModule } from './pawn-hub/pawn-hub.module';
     synchronize: true
 
   }),
-  PawnHubModule],
+  pawnhubModule],
   controllers: [AppController],
   providers: [AppService],
 })
